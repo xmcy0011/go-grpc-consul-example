@@ -1,0 +1,17 @@
+syntax = "proto3";
+package api;
+option go_package = "api/user";
+
+service User {
+    rpc CreateUser (CreateUserReq) returns (CreateUserRes);
+}
+
+message CreateUserReq {
+    string user_name = 1;
+    string user_pwd = 2;
+}
+
+message CreateUserRes {
+    int32 result_code = 1;
+    string result_msg = 2;
+}
